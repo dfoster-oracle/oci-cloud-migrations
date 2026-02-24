@@ -208,7 +208,7 @@ def get_instance_info(compute_client, instance_id):
             'ipxe_script' : get_instance_response.data.ipxe_script,
             'launch_options':object_to_dict(get_instance_response.data.launch_options),
             'metadata' :get_instance_response.data.metadata,
-            'platform_config':get_instance_response.data.platform_config,
+            'platform_config':oci.util.to_dict(get_instance_response.data.platform_config),
             'preemptible_instance_config':get_instance_response.data.preemptible_instance_config,
             #This property is causing launch instance failure in some cases. 
             #'source_details':object_to_dict(get_instance_response.data.source_details),
